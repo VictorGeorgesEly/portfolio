@@ -14,13 +14,13 @@ export default function Headersehsrthshr() {
         <Container maxWidth="xl">
           <Toolbar disableGutters>
             <IconButton>
-              <Avatar alt="Remy Sharp" src="/static/img/victorely.png" />
+              <Avatar alt="Victor ELY" src="/static/img/victorely.png" />
             </IconButton>
             <Typography variant="h6" color="inherit" sx={{ flexGrow: 1 }}>
               Victor ELY
             </Typography>
             <IconButton>
-              <Avatar alt="Remy Sharp" src="/static/img/victorely.png" />
+              <Avatar alt="Github" src="/static/img/github.png" style={{ filter: 'brightness(0) invert(1)' }} />
             </IconButton>
           </Toolbar>
         </Container>

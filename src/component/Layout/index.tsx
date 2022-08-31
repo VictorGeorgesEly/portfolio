@@ -3,9 +3,9 @@ import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Copyright from "./Copyright";
 import Header from "./Header";
-import Curriculum from "./Curriculum";
+import Curriculum from "../../page/Curriculum";
 
-export default function Layout() {
+function Layout() {
   return (
     <Box
       sx={{
@@ -24,3 +24,5 @@ export default function Layout() {
     </Box>
   );
 }
+
+export default Layout;
