@@ -1,9 +1,11 @@
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import { useTheme } from "@mui/material/styles";
-import Typography from "@mui/material/Typography";
 import { ElementType, FunctionComponent, ReactNode } from "react";
+import {
+  List,
+  ListItem,
+  ListItemIcon,
+  Typography,
+  useTheme,
+} from "@mui/material";
 
 interface SectionProps {
   iconComponent?: ElementType;

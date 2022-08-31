@@ -1,9 +1,8 @@
 import * as React from "react";
-import Box from "@mui/material/Box";
-import Container from "@mui/material/Container";
-import Copyright from "./Copyright";
+import { Box, Container } from "@mui/material";
 import Header from "./Header";
 import Curriculum from "../../page/Curriculum";
+import Copyright from "./Copyright";
 
 function Layout() {
   return (

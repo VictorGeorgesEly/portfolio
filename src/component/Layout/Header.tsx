@@ -1,10 +1,12 @@
 import * as React from "react";
-import AppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import Container from "@mui/material/Container";
-import IconButton from "@mui/material/IconButton";
-import Avatar from "@mui/material/Avatar";
+import {
+  AppBar,
+  Avatar,
+  Container,
+  IconButton,
+  Toolbar,
+  Typography,
+} from "@mui/material";
 
 export default function Headersehsrthshr() {
   return (
@@ -20,7 +22,11 @@ export default function Headersehsrthshr() {
               Victor ELY
             </Typography>
             <IconButton>
-              <Avatar alt="Github" src="/static/img/github.png" style={{ filter: 'brightness(0) invert(1)' }} />
+              <Avatar
+                alt="Github"
+                src="/static/img/github.png"
+                style={{ filter: "brightness(0) invert(1)" }}
+              />
             </IconButton>
           </Toolbar>
         </Container>
