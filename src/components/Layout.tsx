@@ -18,7 +18,7 @@ export default function Layout(): JSX.Element {
             }}
         >
         <Header />
-        <Container component="main" sx={{m: '2%'}}>
+        <Container component="main" sx={{ py: 8 }}>
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
