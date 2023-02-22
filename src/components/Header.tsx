@@ -1,5 +1,6 @@
 import {
 	AppBar,
+	Avatar,
 	Box,
 	Button,
 	Container,
@@ -12,6 +13,7 @@ import {
 import MenuIcon from '@mui/icons-material/Menu';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import AvatarUrl from '../assets/avatar.jpeg';
 
 const pages = [
 	{ id: 1, text: 'Home', href: '/' },
@@ -38,11 +40,12 @@ function Header(): JSX.Element {
 		<AppBar position="sticky" color="primary" enableColorOnDark>
 			<Container maxWidth="xl">
 				<Toolbar disableGutters>
+					<Avatar sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} alt="Victor ELY" src={AvatarUrl} />
 					<Typography
 						variant="h6"
 						noWrap
 						sx={{
-							mr: 1,
+							mr: 2,
 							display: { xs: 'none', md: 'flex' },
 							fontWeight: 700,
 							letterSpacing: '.3rem',
@@ -103,11 +106,12 @@ function Header(): JSX.Element {
 						</Menu>
 					</Box>
                     
+					<Avatar sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} alt="Victor ELY" src={AvatarUrl} />
 					<Typography
 						variant="h5"
 						noWrap
 						sx={{
-							mr: 1,
+							mr: 2,
 							display: { xs: 'flex', md: 'none' },
 							flexGrow: 1,
 							fontWeight: 700,
