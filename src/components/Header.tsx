@@ -11,13 +11,14 @@ import {
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const pages = [
-	{ id: 1, text: 'Home' },
-	{ id: 2, text: 'A propos de moi' },
-	{ id: 3, text: 'Portfolio' },
-	{ id: 4, text: 'CV' },
-	{ id: 5, text: 'Contact' },
+	{ id: 1, text: 'Home', href: '/' },
+	{ id: 2, text: 'A propos de moi', href: '/about' },
+	{ id: 3, text: 'Portfolio', href: '/portfolio' },
+	{ id: 4, text: 'Curriculum vitae', href: '/curriculumVitae' },
+	{ id: 5, text: 'Contact', href: '/contact' },
 ];
 
 function Header(): JSX.Element {
@@ -90,6 +91,8 @@ function Header(): JSX.Element {
 							{pages.map((page) => (
 								<MenuItem
 									key={page.id}
+									component={Link}
+									to={page.href}
 									onClick={handleCloseNavMenu}
 								>
 									<Typography textAlign="center">
@@ -125,6 +128,8 @@ function Header(): JSX.Element {
 						{pages.map((page) => (
 							<Button
 								key={page.id}
+								component={Link}
+								to={page.href}
 								onClick={handleCloseNavMenu}
 								sx={{ my: 2, color: 'white', display: 'block' }}
 							>

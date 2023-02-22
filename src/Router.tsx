@@ -7,8 +7,7 @@ export default function Router(): JSX.Element {
 	return (
 		<BrowserRouter>
 			<Routes>
-				<Route path="/" element={<Layout />} />
-                <Route path="*" element={<h1>404</h1>} />
+				<Route path="*" element={<Layout />} />
 			</Routes>
 		</BrowserRouter>
 	);

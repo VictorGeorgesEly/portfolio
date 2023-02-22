@@ -1,6 +1,6 @@
-import Typewriter from "./components/Typewriter";
+import Typewriter from "../components/Typewriter";
 
-export default function App(): JSX.Element {
+export default function Home(): JSX.Element {
   const texts = ["an Ingenior", "a Developer", "Victor ELY"];
   return (
       <h1>
