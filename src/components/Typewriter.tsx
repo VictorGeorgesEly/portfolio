@@ -4,22 +4,27 @@ interface TypewriterProps {
   text: string | string[];
   speed?: number;
   deleteSpeed?: number;
+  pauseDuration?: number;
 }
 
-const Typewriter: React.FC<TypewriterProps> = ({ text, speed = 120, deleteSpeed = speed / 2 }) => {
+const Typewriter: React.FC<TypewriterProps> = ({ text, speed = 160, deleteSpeed = speed / 2, pauseDuration = 1000 }) => {
   const [currentStringIndex, setCurrentStringIndex] = useState(0);
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
 
   if (!Array.isArray(text)) text = [text];
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
-      if (isDeleting) {
+      if (isPaused) {
+        setIsPaused(false);
+      } else if (isDeleting) {
         if (currentTextIndex > 0) {
           setCurrentTextIndex(currentTextIndex - 1);
         } else {
           setIsDeleting(false);
+          setIsPaused(true);
           setCurrentStringIndex((currentStringIndex + 1) % text.length);
         }
       } else {
@@ -27,12 +32,13 @@ const Typewriter: React.FC<TypewriterProps> = ({ text, speed = 120, deleteSpeed 
           setCurrentTextIndex(currentTextIndex + 1);
         } else {
           setIsDeleting(true);
+          setIsPaused(true);
         }
       }
-    }, isDeleting ? deleteSpeed : speed);
+    }, isPaused ? pauseDuration : isDeleting ? deleteSpeed : speed);
 
     return () => clearTimeout(timeoutId);
-  }, [currentStringIndex, currentTextIndex, speed, deleteSpeed, text, isDeleting]);
+  }, [currentStringIndex, currentTextIndex, speed, deleteSpeed, pauseDuration, text, isDeleting, isPaused]);
 
   return (
     <span>
