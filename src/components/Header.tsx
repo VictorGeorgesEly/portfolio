@@ -53,6 +53,8 @@ function Header(): JSX.Element {
 							textDecoration: 'none',
                             flexGrow: 1,
 						}}
+						component={Link}
+						to="/"
 					>
 						Victor ELY
 					</Typography>
@@ -119,6 +121,8 @@ function Header(): JSX.Element {
 							color: 'inherit',
 							textDecoration: 'none',
 						}}
+						component={Link}
+						to="/"
 					>
 						Victor ELY
 					</Typography>
