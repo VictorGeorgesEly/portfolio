@@ -9,26 +9,28 @@ import Footer from "./Footer";
 import Header from "./Header";
 
 export default function Layout(): JSX.Element {
-    return (
-        <Box
-            sx={{
-                display: 'flex',
-                flexDirection: 'column',
-                minHeight: '100vh',
-            }}
-        >
-        <Header />
-        <Container component="main" sx={{ py: 8 }}>
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/portfolio" element={<Portfolio />} />
-                <Route path="/curriculumVitae" element={<CurriculumVitae />} />
-                <Route path="/contact" element={<Contact />} />
-                <Route path="*" element={<h1>404</h1>} />
-            </Routes>
-        </Container>
-        <Footer />
+  return (
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        minHeight: "100vh",
+      }}
+    >
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+      <Container component="main" sx={{ py: 8 }}> {/* TODO Fix */}
+        <Routes>
+          <Route path="/about" element={<About />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/curriculumVitae" element={<CurriculumVitae />} />
+          <Route path="/contact" element={<Contact />} />
+          {/*<Route path="*" element={<h1>404</h1>} />*/}
+        </Routes>
+      </Container>
+      <Footer />
     </Box>
-    )
+  );
 }
