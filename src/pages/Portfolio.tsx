@@ -50,7 +50,7 @@ export default function Portfolio(): JSX.Element {
             Portfolio
           </Typography>
           <Divider />
-          <Grid container spacing={4} sx={{ mt: 4 }}>
+          <Grid container spacing={4} sx={{ mt: 4 , mb: 4}}>
             {cards.map((card) => (
               <Grid item key={card} xs={12} sm={6} md={4}>
                 <Card
