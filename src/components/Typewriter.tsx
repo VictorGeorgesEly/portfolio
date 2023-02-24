@@ -59,7 +59,7 @@ const Typewriter: React.FC<TypewriterProps> = ({
 
   return (
     <span>
-      I am {text[currentStringIndex].substring(0, currentTextIndex)}
+      {text[currentStringIndex].substring(0, currentTextIndex)}
       <span>▎</span>
     </span>
   );

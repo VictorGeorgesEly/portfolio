@@ -3,15 +3,12 @@ import Typewriter from "../components/Typewriter";
 import Background from "../assets/background.jpg";
 
 export default function Home(): JSX.Element {
-  const texts = ["an Engineer", "a Developer"];
+  const texts = ["an Engineer", "a Developer", "Full Stack"];
   return (
     <>
       <Box
         sx={{
           height: "100vh",
-          //display: "flex",
-          //justifyContent: "flex-end",
-          //alignItems: "flex-end",
           backgroundImage: `url(${Background})`,
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
@@ -37,7 +34,7 @@ export default function Home(): JSX.Element {
           I am Victor ELY
         </Typography>
         <Typography variant="h3" sx={{ fontWeight: "400" }}>
-          And <Typewriter text={texts} />
+          And I am <br /><Typewriter text={texts} />
         </Typography>
       </Box>
     </>

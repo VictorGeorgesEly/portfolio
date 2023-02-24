@@ -4,6 +4,7 @@ import About from "../pages/About";
 import Contact from "../pages/Contact";
 import CurriculumVitae from "../pages/CurriculumVitae";
 import Home from "../pages/Home";
+import NotFound from "../pages/NotFound";
 import Portfolio from "../pages/Portfolio";
 import Footer from "./Footer";
 import Header from "./Header";
@@ -49,7 +50,7 @@ export default function Layout(): JSX.Element {
           }
         />
         <Route
-          path="/curriculumVitae"
+          path="/curriculum-vitae"
           element={
             <Wrapper>
               <CurriculumVitae />
@@ -64,7 +65,7 @@ export default function Layout(): JSX.Element {
             </Wrapper>
           }
         />
-        <Route path="*" element={<h1>404</h1>} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </Box>

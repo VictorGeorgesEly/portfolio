@@ -55,11 +55,11 @@ export default function Portfolio(): JSX.Element {
               <Grid item key={card} xs={12} sm={6} md={4}>
                 <Card
                   sx={{
-                    maxWidth: 345,
                     height: "100%",
                     display: "flex",
                     flexDirection: "column",
                   }}
+                  elevation={12}
                 >
                   <CardActionArea onClick={handleClickOpen}>
                     <CardMedia
@@ -85,9 +85,9 @@ export default function Portfolio(): JSX.Element {
                       </Typography>
                     </CardContent>
                   </CardActionArea>
-                  <CardActions>
+                  <CardActions sx={{ display: 'flex', justifyContent: 'flex-end' }}>
                     <Button
-                      size="small"
+                      size="medium"
                       color="secondary"
                       onClick={handleClickOpen}
                     >

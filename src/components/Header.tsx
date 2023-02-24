@@ -19,7 +19,7 @@ const pages = [
   { id: 1, text: "Home", href: "/" },
   { id: 2, text: "A propos de moi", href: "/about" },
   { id: 3, text: "Portfolio", href: "/portfolio" },
-  { id: 4, text: "Curriculum vitae", href: "/curriculumVitae" },
+  { id: 4, text: "Curriculum vitae", href: "/curriculum-vitae" },
   { id: 5, text: "Contact", href: "/contact" },
 ];
 
