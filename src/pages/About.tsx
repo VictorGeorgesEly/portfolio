@@ -28,7 +28,7 @@ export default function About(): JSX.Element {
             }}
             spacing={4}
           >
-            <Grid item xs={6}>
+            <Grid item xs={12} sm={6}>
               <Typography
                 variant="h5"
                 gutterBottom
@@ -49,7 +49,7 @@ export default function About(): JSX.Element {
                 sunt in culpa qui officia deserunt mollit anim id est laborum.
               </Typography>
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={12} sm={6}>
               <Grid item xs={12}>
                 <Typography
                   variant="h6"
