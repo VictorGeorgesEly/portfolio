@@ -1,4 +1,5 @@
 import {
+  Avatar,
   Box,
   Card,
   CardContent,
@@ -7,6 +8,7 @@ import {
   Typography,
 } from "@mui/material";
 import MouseIcon from "@mui/icons-material/Mouse";
+import AvatarUrl from "../assets/avatar.jpeg";
 
 export default function About(): JSX.Element {
   return (
@@ -28,28 +30,28 @@ export default function About(): JSX.Element {
             }}
             spacing={4}
           >
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={6} md={3}>
+              <Avatar
+                alt="Victor ELY"
+                src={AvatarUrl}
+                sx={{ width: 250, height: 250 }}
+              />
+            </Grid>
+            <Grid item xs={12} sm={6} md={5}>
               <Typography
-                variant="h5"
+                variant="h2"
                 gutterBottom
-                sx={{
-                  borderBottom: "#E48F46 2px solid",
-                  display: "inline-block",
-                }}
+                sx={{fontWeight: 'bold'}}
               >
-                Description
+                Victor ELY
               </Typography>
-              <Typography variant="body2" gutterBottom>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              <Typography
+                variant="h4"
+              >
+                Développeur Full Stack
               </Typography>
             </Grid>
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={12} md={4}>
               <Grid item xs={12}>
                 <Typography
                   variant="h6"
@@ -91,7 +93,30 @@ export default function About(): JSX.Element {
               </Grid>
             </Grid>
           </Grid>
-          <Grid container sx={{ mt: 4, mb: 4 }} spacing={4}>
+          <Grid container sx={{ mt: 2, mb: 2 }}>
+            <Grid item xs={12}>
+              <Typography
+                variant="h5"
+                gutterBottom
+                sx={{
+                  borderBottom: "#E48F46 2px solid",
+                  display: "inline-block",
+                }}
+              >
+                Description
+              </Typography>
+              <Typography variant="body2" gutterBottom>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </Typography>
+            </Grid>
+          </Grid>
+          <Grid container sx={{ mt: 2, mb: 2 }} spacing={4}>
             <Grid item xs={12}>
               <Typography
                 variant="h5"
