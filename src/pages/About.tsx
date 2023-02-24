@@ -30,26 +30,28 @@ export default function About(): JSX.Element {
             }}
             spacing={4}
           >
-            <Grid item xs={12} sm={6} md={3}>
+            <Grid
+              item
+              xs={12}
+              sm={4}
+              md={3}
+              sx={{
+                alignItems: "center",
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
               <Avatar
                 alt="Victor ELY"
                 src={AvatarUrl}
-                sx={{ width: 250, height: 250 }}
+                sx={{ width: 220, height: 220 }}
               />
             </Grid>
-            <Grid item xs={12} sm={6} md={5}>
-              <Typography
-                variant="h2"
-                gutterBottom
-                sx={{fontWeight: 'bold'}}
-              >
+            <Grid item xs={12} sm={8} md={5}>
+              <Typography variant="h2" gutterBottom sx={{ fontWeight: "bold" }}>
                 Victor ELY
               </Typography>
-              <Typography
-                variant="h4"
-              >
-                Développeur Full Stack
-              </Typography>
+              <Typography variant="h4">Développeur Full Stack</Typography>
             </Grid>
             <Grid item xs={12} sm={12} md={4}>
               <Grid item xs={12}>
