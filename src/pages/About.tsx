@@ -1,4 +1,11 @@
-import { Box, Card, CardContent, Divider, Grid, Typography } from "@mui/material";
+import {
+  Box,
+  Card,
+  CardContent,
+  Divider,
+  Grid,
+  Typography,
+} from "@mui/material";
 
 export default function About(): JSX.Element {
   return (
