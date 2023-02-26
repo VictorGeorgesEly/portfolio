@@ -1,19 +1,12 @@
-import { Box, Card, CardContent, Divider, Grid, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
+import Wrapper from "../components/Wrapper";
 
 export default function Contact(): JSX.Element {
   return (
-    <Box>
-      <Card sx={{ width: "100%" }}>
-        <CardContent>
-          <Typography gutterBottom variant="h4" component="div">
-            Contact
-          </Typography>
-          <Divider />
-          <Grid container spacing={4} sx={{ mt: 4, mb: 4 }}>
-            
-          </Grid>
-        </CardContent>
-      </Card>
-    </Box>
+    <Wrapper title="Contact">
+      <Typography variant="h1" gutterBottom>
+        Work in progress
+      </Typography>
+    </Wrapper>
   );
 }

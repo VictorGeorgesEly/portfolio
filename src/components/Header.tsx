@@ -17,10 +17,10 @@ import AvatarUrl from "../assets/avatar.jpeg";
 
 const pages = [
   { id: 1, text: "Home", href: "/" },
-  { id: 2, text: "A propos de moi", href: "/about" },
+  { id: 2, text: "A propos", href: "/about" },
   { id: 3, text: "Portfolio", href: "/portfolio" },
-  { id: 4, text: "Curriculum vitae", href: "/curriculum-vitae" },
-  { id: 5, text: "Contact", href: "/contact" },
+  /*{ id: 4, text: "Curriculum vitae", href: "/curriculum-vitae" },
+  { id: 5, text: "Contact", href: "/contact" },*/
 ];
 
 function Header(): JSX.Element {

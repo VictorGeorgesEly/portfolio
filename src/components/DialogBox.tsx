@@ -15,6 +15,7 @@ interface DialogBoxProps {
     id: number;
     name: string;
     description: string;
+    url: string;
   };
   open: boolean;
   handleClose: () => void;
@@ -41,6 +42,8 @@ export default function DialogBox({
       keepMounted
       onClose={handleClose}
       aria-describedby="alert-dialog-slide-description"
+      fullWidth
+      maxWidth="md"
     >
       <DialogTitle>{project.name}</DialogTitle>
       <DialogContent>
@@ -48,6 +51,7 @@ export default function DialogBox({
           {project.description}
         </DialogContentText>
       </DialogContent>
+      {project.url}
       <DialogActions>
         <Button color="secondary" onClick={handleClose}>
           Fermer
