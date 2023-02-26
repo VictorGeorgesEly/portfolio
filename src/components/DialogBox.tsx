@@ -6,6 +6,7 @@ import {
   DialogContentText,
   DialogTitle,
   Divider,
+  Link,
   Slide,
   Typography,
 } from "@mui/material";
@@ -18,6 +19,7 @@ interface DialogBoxProps {
     name: string;
     description: string;
     url: string;
+    photo: string;
   };
   open: boolean;
   handleClose: () => void;
@@ -49,11 +51,12 @@ export default function DialogBox({
     >
       <DialogTitle>{project.name}</DialogTitle>
       <DialogContent>
+      <img src={project.photo} alt="Project" style={{width: '100%'}} />
         <DialogContentText id="alert-dialog-slide-description" sx={{mb: 2}}>
           {project.description}
         </DialogContentText>
         <Divider />
-        <Typography variant="body2" sx={{mt: 2}}>{project.url}</Typography>
+        <Link href={project.url} underline="none" variant="body2" color="secondary" target="_blank" rel="noopener noreferrer" sx={{mt: 2}}>{project.url}</Link>
       </DialogContent>
       <DialogActions>
         <Button color="secondary" onClick={handleClose}>
