@@ -1,47 +1,62 @@
 import {
   Box,
-  Button,
   Card,
   CardActionArea,
-  CardActions,
   CardContent,
   CardMedia,
-  Dialog,
-  DialogActions,
-  DialogContent,
-  DialogContentText,
-  DialogTitle,
   Divider,
   Grid,
-  Slide,
   Typography,
 } from "@mui/material";
-import { TransitionProps } from "@mui/material/transitions";
 import React from "react";
 
 import Reptile from "../assets/reptile.jpg";
+import DialogBox from "../components/DialogBox";
 
-const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+interface ProjectData {
+  id: number;
+  name: string;
+  description: string;
+}
 
-const Transition = React.forwardRef(function Transition(
-  props: TransitionProps & {
-    children: React.ReactElement<any, any>;
+const projects: ProjectData[] = [
+  {
+    id: 1,
+    name: "Project 1",
+    description: "Description of Project 1",
   },
-  ref: React.Ref<unknown>
-) {
-  return <Slide direction="up" ref={ref} {...props} />;
-});
+  {
+    id: 2,
+    name: "Project 2",
+    description: "Description of Project 2",
+  },
+  {
+    id: 3,
+    name: "Project 3",
+    description: "Description of Project 3",
+  },
+  {
+    id: 4,
+    name: "Project 4",
+    description: "Description of Project 4",
+  },
+  // Add more projects here as needed
+];
 
 export default function Portfolio(): JSX.Element {
   const [open, setOpen] = React.useState(false);
+  const [selectedProject, setSelectedProject] =
+    React.useState<ProjectData | null>(null);
 
-  const handleClickOpen = () => {
+  const handleClickOpen = (project: ProjectData) => {
+    setSelectedProject(project);
     setOpen(true);
   };
 
   const handleClose = () => {
     setOpen(false);
   };
+
   return (
     <Box>
       <Card sx={{ width: "100%" }}>
@@ -50,9 +65,9 @@ export default function Portfolio(): JSX.Element {
             Portfolio
           </Typography>
           <Divider />
-          <Grid container spacing={4} sx={{ mt: 4 , mb: 4}}>
-            {cards.map((card) => (
-              <Grid item key={card} xs={12} sm={6} md={4}>
+          <Grid container spacing={4} sx={{ mt: 4, mb: 4 }}>
+            {projects.map((project) => (
+              <Grid item key={project.id} xs={12} sm={6} md={4}>
                 <Card
                   sx={{
                     height: "100%",
@@ -61,7 +76,7 @@ export default function Portfolio(): JSX.Element {
                   }}
                   elevation={12}
                 >
-                  <CardActionArea onClick={handleClickOpen}>
+                  <CardActionArea onClick={() => handleClickOpen(project)}>
                     <CardMedia
                       component="img"
                       height="140"
@@ -70,57 +85,20 @@ export default function Portfolio(): JSX.Element {
                     />
                     <CardContent>
                       <Typography gutterBottom variant="h5" component="div">
-                        Project name
+                        {project.name}
                       </Typography>
                       <Typography variant="body2" color="text.secondary">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua. Ut enim ad minim veniam, quis nostrud
-                        exercitation ullamco laboris nisi ut aliquip ex ea
-                        commodo consequat. Duis aute irure dolor in
-                        reprehenderit in voluptate velit esse cillum dolore eu
-                        fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                        non proident, sunt in culpa qui officia deserunt mollit
-                        anim id est laborum.
+                        {project.description}
                       </Typography>
                     </CardContent>
                   </CardActionArea>
-                  <CardActions sx={{ display: 'flex', justifyContent: 'flex-end' }}>
-                    <Button
-                      size="medium"
-                      color="secondary"
-                      onClick={handleClickOpen}
-                    >
-                      Détails
-                    </Button>
-                    <Dialog
+                  {selectedProject && (
+                    <DialogBox
+                      project={selectedProject}
                       open={open}
-                      TransitionComponent={Transition}
-                      keepMounted
-                      onClose={handleClose}
-                      aria-describedby="alert-dialog-slide-description"
-                    >
-                      <DialogTitle>Description du projet</DialogTitle>
-                      <DialogContent>
-                        <DialogContentText id="alert-dialog-slide-description">
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit, sed do eiusmod tempor incididunt ut labore et
-                          dolore magna aliqua. Ut enim ad minim veniam, quis
-                          nostrud exercitation ullamco laboris nisi ut aliquip
-                          ex ea commodo consequat. Duis aute irure dolor in
-                          reprehenderit in voluptate velit esse cillum dolore eu
-                          fugiat nulla pariatur. Excepteur sint occaecat
-                          cupidatat non proident, sunt in culpa qui officia
-                          deserunt mollit anim id est laborum.
-                        </DialogContentText>
-                      </DialogContent>
-                      <DialogActions>
-                        <Button color="secondary" onClick={handleClose}>
-                          Fermer
-                        </Button>
-                      </DialogActions>
-                    </Dialog>
-                  </CardActions>
+                      handleClose={handleClose}
+                    />
+                  )}
                 </Card>
               </Grid>
             ))}

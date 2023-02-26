@@ -8,7 +8,7 @@ export default function Home(): JSX.Element {
     <>
       <Box
         sx={{
-          height: "100vh",
+          height: "80vh",
           backgroundImage: `url(${Background})`,
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
@@ -17,7 +17,7 @@ export default function Home(): JSX.Element {
       />
       <Box
         sx={{
-          backgroundColor: "rgba(0,0,0, 0.4)",
+          backgroundColor: "rgba(0,0,0, 0.5)",
           color: "white",
           border: "3px solid #f1f1f1",
           position: "absolute",
@@ -34,7 +34,8 @@ export default function Home(): JSX.Element {
           I am Victor ELY
         </Typography>
         <Typography variant="h3" sx={{ fontWeight: "400" }}>
-          And I am <br /><Typewriter text={texts} />
+          And I am <br />
+          <Typewriter text={texts} />
         </Typography>
       </Box>
     </>
