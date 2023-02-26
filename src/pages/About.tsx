@@ -1,14 +1,18 @@
-import {
-  Avatar,
-  Box,
-  Grid,
-  Typography,
-} from "@mui/material";
+import { Avatar, Box, Grid, Typography } from "@mui/material";
 import AvatarUrl from "../assets/avatar.jpeg";
 import ReactSvg from "../assets/react.svg";
 import SpringSvg from "../assets/spring.svg";
+import JavaSvg from "../assets/java.svg";
+import JavaScriptSvg from "../assets/javascript.svg";
+import TypeScriptSvg from "../assets/typescript.svg";
 import GolangSvg from "../assets/golang.svg";
 import MysqlSvg from "../assets/mysql.svg";
+import OracleSvg from "../assets/oracle.svg";
+import SqliteSvg from "../assets/sqlite.svg";
+import GitSvg from "../assets/git.svg";
+import SvnSvg from "../assets/svn.svg";
+import JenkinsSvg from "../assets/jenkins.svg";
+import Intellijvg from "../assets/intellij.svg";
 import Wrapper from "../components/Wrapper";
 
 function Description(): JSX.Element {
@@ -47,19 +51,6 @@ function Description(): JSX.Element {
             avec Jenkins et GitLab.
           </Typography>
           <Typography variant="h6" gutterBottom>
-            Compétences techniques :
-          </Typography>
-          <Typography variant="body1" gutterBottom align="justify">
-            Langages de programmation : ReactJS, Java, Golang.
-            <br />
-            Bibliothèques : Spring (Boot, Batch, Web, Security, Data JPA),
-            TypeScript, React Router, Axios, Jest, Mui, Gin, Gorm.
-            <br />
-            Bases de données : MySQL, SQLite, Oracle Database.
-            <br />
-            Outils de développement : Git, SVN, Jenkins, IntelliJ IDEA.
-          </Typography>
-          <Typography variant="h6" gutterBottom>
             Centres d'intérêt :
           </Typography>
           <Typography variant="body1" gutterBottom align="justify">
@@ -78,6 +69,89 @@ function Description(): JSX.Element {
   );
 }
 
+interface TechnoData {
+  id: number;
+  name: string;
+  photo: string;
+}
+
+const technos: TechnoData[] = [
+  {
+    id: 1,
+    name: "Java",
+    photo: JavaSvg,
+  },
+  {
+    id: 2,
+    name: "Golang",
+    photo: GolangSvg,
+  },
+  {
+    id: 3,
+    name: "JavaScript",
+    photo: JavaScriptSvg,
+  },
+];
+
+const frameworks: TechnoData[] = [
+  {
+    id: 1,
+    name: "Spring",
+    photo: SpringSvg,
+  },
+  {
+    id: 2,
+    name: "ReactJS",
+    photo: ReactSvg,
+  },
+  {
+    id: 3,
+    name: "TypeScript",
+    photo: TypeScriptSvg,
+  },
+];
+
+const databases: TechnoData[] = [
+  {
+    id: 1,
+    name: "MySQL",
+    photo: MysqlSvg,
+  },
+  {
+    id: 2,
+    name: "SQLite",
+    photo: SqliteSvg,
+  },
+  {
+    id: 3,
+    name: "Oracle Databases",
+    photo: OracleSvg,
+  },
+];
+
+const tools: TechnoData[] = [
+  {
+    id: 1,
+    name: "Git",
+    photo: GitSvg,
+  },
+  {
+    id: 2,
+    name: "SVN",
+    photo: SvnSvg,
+  },
+  {
+    id: 3,
+    name: "Jenkins",
+    photo: JenkinsSvg,
+  },
+  {
+    id: 3,
+    name: "Intellij",
+    photo: Intellijvg,
+  },
+];
+
 function Techno(): JSX.Element {
   return (
     <Grid container sx={{ mt: 2, mb: 2 }}>
@@ -93,6 +167,25 @@ function Techno(): JSX.Element {
           Mes techno
         </Typography>
       </Grid>
+      <TechnoGrid items={technos} title="Languages :" />
+      <TechnoGrid items={frameworks} title="Framework | Bibliothèques :" />
+      <TechnoGrid items={databases} title="Base de données :" />
+      <TechnoGrid items={tools} title="Outils de développement :" />
+    </Grid>
+  );
+}
+
+interface TechnoGridProps {
+  items: TechnoData[];
+  title: string;
+}
+
+function TechnoGrid({ items, title }: TechnoGridProps) {
+  return (
+    <>
+      <Typography variant="h6" gutterBottom>
+        {title}
+      </Typography>
       <Grid
         container
         sx={{
@@ -102,40 +195,22 @@ function Techno(): JSX.Element {
         }}
         spacing={4}
       >
-        <Grid item xs={12} sm={6} md={3}>
-          <Box sx={{ textAlign: "center", flex: 1 }}>
-            <img src={SpringSvg} alt="Spring Logo" style={{ height: 50 }} />
-            <Typography variant="h5" gutterBottom>
-              Spring
-            </Typography>
-          </Box>
-        </Grid>
-        <Grid item xs={12} sm={6} md={3}>
-          <Box sx={{ textAlign: "center", flex: 1 }}>
-            <img src={GolangSvg} alt="Spring Logo" style={{ height: 50 }} />
-            <Typography variant="h5" gutterBottom>
-              Golang
-            </Typography>
-          </Box>
-        </Grid>
-        <Grid item xs={12} sm={6} md={3}>
-          <Box sx={{ textAlign: "center", flex: 1 }}>
-            <img src={ReactSvg} alt="Spring Logo" style={{ height: 50 }} />
-            <Typography variant="h5" gutterBottom>
-              ReactJS
-            </Typography>
-          </Box>
-        </Grid>
-        <Grid item xs={12} sm={6} md={3}>
-          <Box sx={{ textAlign: "center", flex: 1 }}>
-            <img src={MysqlSvg} alt="Spring Logo" style={{ height: 50 }} />
-            <Typography variant="h5" gutterBottom>
-              SQL
-            </Typography>
-          </Box>
-        </Grid>
+        {items.map((item) => (
+          <Grid item key={item.id} xs={12} sm={6} md={3}>
+            <Box sx={{ textAlign: "center", flex: 1 }}>
+              <img
+                src={item.photo}
+                alt={`${item.name} Logo`}
+                style={{ height: 50, maxWidth: 150 }}
+              />
+              <Typography variant="h5" gutterBottom>
+                {item.name}
+              </Typography>
+            </Box>
+          </Grid>
+        ))}
       </Grid>
-    </Grid>
+    </>
   );
 }
 

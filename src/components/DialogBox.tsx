@@ -8,7 +8,6 @@ import {
   Divider,
   Link,
   Slide,
-  Typography,
 } from "@mui/material";
 import { TransitionProps } from "@mui/material/transitions";
 import React from "react";
