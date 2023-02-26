@@ -5,7 +5,9 @@ import {
   DialogContent,
   DialogContentText,
   DialogTitle,
+  Divider,
   Slide,
+  Typography,
 } from "@mui/material";
 import { TransitionProps } from "@mui/material/transitions";
 import React from "react";
@@ -47,11 +49,12 @@ export default function DialogBox({
     >
       <DialogTitle>{project.name}</DialogTitle>
       <DialogContent>
-        <DialogContentText id="alert-dialog-slide-description">
+        <DialogContentText id="alert-dialog-slide-description" sx={{mb: 2}}>
           {project.description}
         </DialogContentText>
+        <Divider />
+        <Typography variant="body2" sx={{mt: 2}}>{project.url}</Typography>
       </DialogContent>
-      {project.url}
       <DialogActions>
         <Button color="secondary" onClick={handleClose}>
           Fermer

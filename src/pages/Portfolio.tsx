@@ -1,50 +1,56 @@
 import {
-  Box,
   Card,
   CardActionArea,
   CardContent,
   CardMedia,
-  Divider,
   Grid,
   Typography,
 } from "@mui/material";
 import React from "react";
 
-import Reptile from "../assets/reptile.jpg";
 import DialogBox from "../components/DialogBox";
 import Wrapper from "../components/Wrapper";
+
+import Reptile from "../assets/reptile.jpg";
+import PortfolioImg from "../assets/projects/portfolio.png";
+import CatnixImg from "../assets/projects/catnix.png";
 
 interface ProjectData {
   id: number;
   name: string;
   description: string;
   url: string;
+  photo: string;
 }
 
 const projects: ProjectData[] = [
   {
     id: 1,
-    name: "Project 1",
-    description: "Description of Project 1",
-    url: "https://github.com",
+    name: "Portfolio",
+    description: "Projet réalisé en ReactJS - Typescript",
+    url: "https://github.com/VictorGeorgesEly/portfolio",
+    photo: PortfolioImg,
   },
   {
     id: 2,
-    name: "Project 2",
-    description: "Description of Project 2",
+    name: "Catnix",
+    description: "CRM réalisé pour l'association Junior ISEP en ReactJS - Spring",
     url: "https://github.com",
+    photo: CatnixImg,
   },
   {
     id: 3,
     name: "Project 3",
     description: "Description of Project 3",
     url: "https://github.com",
+    photo: Reptile,
   },
   {
     id: 4,
     name: "Project 4",
     description: "Description of Project 4",
     url: "https://github.com",
+    photo: Reptile,
   },
   // Add more projects here as needed
 ];
@@ -80,8 +86,8 @@ export default function Portfolio(): JSX.Element {
                 <CardMedia
                   component="img"
                   height="140"
-                  image={Reptile}
-                  alt="green iguana"
+                  image={project.photo}
+                  alt="project"
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="div">

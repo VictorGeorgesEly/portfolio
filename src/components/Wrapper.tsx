@@ -4,7 +4,6 @@ import {
   Card,
   CardContent,
   Divider,
-  Grid,
   Typography,
 } from "@mui/material";
 
@@ -22,9 +21,9 @@ const Wrapper: React.FC<Props> = ({ title, children }) => {
             {title}
           </Typography>
           <Divider />
-          <Grid container sx={{ mt: 4, mb: 4 }}>
+          <Box sx={{ mt: 4, mb: 4 }}>
             {children}
-          </Grid>
+          </Box>
         </CardContent>
       </Card>
     </Box>

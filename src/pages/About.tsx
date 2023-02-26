@@ -1,9 +1,6 @@
 import {
   Avatar,
   Box,
-  Card,
-  CardContent,
-  Divider,
   Grid,
   Typography,
 } from "@mui/material";
@@ -107,7 +104,7 @@ function Techno(): JSX.Element {
       >
         <Grid item xs={12} sm={6} md={3}>
           <Box sx={{ textAlign: "center", flex: 1 }}>
-            <img src={SpringSvg} alt="Spring Logo" style={{ width: 50 }} />
+            <img src={SpringSvg} alt="Spring Logo" style={{ height: 50 }} />
             <Typography variant="h5" gutterBottom>
               Spring
             </Typography>
@@ -115,7 +112,7 @@ function Techno(): JSX.Element {
         </Grid>
         <Grid item xs={12} sm={6} md={3}>
           <Box sx={{ textAlign: "center", flex: 1 }}>
-            <img src={GolangSvg} alt="Spring Logo" style={{ width: 50 }} />
+            <img src={GolangSvg} alt="Spring Logo" style={{ height: 50 }} />
             <Typography variant="h5" gutterBottom>
               Golang
             </Typography>
@@ -123,7 +120,7 @@ function Techno(): JSX.Element {
         </Grid>
         <Grid item xs={12} sm={6} md={3}>
           <Box sx={{ textAlign: "center", flex: 1 }}>
-            <img src={ReactSvg} alt="Spring Logo" style={{ width: 50 }} />
+            <img src={ReactSvg} alt="Spring Logo" style={{ height: 50 }} />
             <Typography variant="h5" gutterBottom>
               ReactJS
             </Typography>
@@ -131,7 +128,7 @@ function Techno(): JSX.Element {
         </Grid>
         <Grid item xs={12} sm={6} md={3}>
           <Box sx={{ textAlign: "center", flex: 1 }}>
-            <img src={MysqlSvg} alt="Spring Logo" style={{ width: 50 }} />
+            <img src={MysqlSvg} alt="Spring Logo" style={{ height: 50 }} />
             <Typography variant="h5" gutterBottom>
               SQL
             </Typography>
