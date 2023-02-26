@@ -12,7 +12,7 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import AvatarUrl from "../assets/avatar.jpeg";
 
 const pages = [
@@ -24,6 +24,10 @@ const pages = [
 ];
 
 function Header(): JSX.Element {
+
+  const location = useLocation();
+  const currentPath = location.pathname;
+
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
   );
@@ -145,7 +149,8 @@ function Header(): JSX.Element {
                 component={Link}
                 to={page.href}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
+                sx={{ my: 2, display: "block" }}
+                color={currentPath === page.href ? "secondary" : "inherit"}
               >
                 {page.text}
               </Button>

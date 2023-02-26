@@ -1,18 +1,18 @@
 import { Avatar, Box, Grid, Typography } from "@mui/material";
 import AvatarUrl from "../assets/avatar.jpeg";
-import ReactSvg from "../assets/react.svg";
-import SpringSvg from "../assets/spring.svg";
-import JavaSvg from "../assets/java.svg";
-import JavaScriptSvg from "../assets/javascript.svg";
-import TypeScriptSvg from "../assets/typescript.svg";
-import GolangSvg from "../assets/golang.svg";
-import MysqlSvg from "../assets/mysql.svg";
-import OracleSvg from "../assets/oracle.svg";
-import SqliteSvg from "../assets/sqlite.svg";
-import GitSvg from "../assets/git.svg";
-import SvnSvg from "../assets/svn.svg";
-import JenkinsSvg from "../assets/jenkins.svg";
-import Intellijvg from "../assets/intellij.svg";
+import ReactSvg from "../assets/technos/react.svg";
+import SpringSvg from "../assets/technos/spring.svg";
+import JavaSvg from "../assets/technos/java.svg";
+import JavaScriptSvg from "../assets/technos/javascript.svg";
+import TypeScriptSvg from "../assets/technos/typescript.svg";
+import GolangSvg from "../assets/technos/golang.svg";
+import MysqlSvg from "../assets/technos/mysql.svg";
+import OracleSvg from "../assets/technos/oracle.svg";
+import SqliteSvg from "../assets/technos/sqlite.svg";
+import GitSvg from "../assets/technos/git.svg";
+import SvnSvg from "../assets/technos/svn.svg";
+import JenkinsSvg from "../assets/technos/jenkins.svg";
+import Intellijvg from "../assets/technos/intellij.svg";
 import Wrapper from "../components/Wrapper";
 
 function Description(): JSX.Element {
@@ -202,7 +202,7 @@ function TechnoGrid({ items, title }: TechnoGridProps) {
                 alt={`${item.name} Logo`}
                 style={{ height: 50, maxWidth: 150 }}
               />
-              <Typography variant="h5" gutterBottom>
+              <Typography variant="body1" gutterBottom>
                 {item.name}
               </Typography>
             </Box>
