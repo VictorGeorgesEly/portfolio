@@ -50,12 +50,21 @@ export default function DialogBox({
     >
       <DialogTitle>{project.name}</DialogTitle>
       <DialogContent>
-      <img src={project.photo} alt="Project" style={{width: '100%'}} />
-        <DialogContentText id="alert-dialog-slide-description" sx={{mb: 2}}>
+        <img src={project.photo} alt="Project" style={{ width: "100%" }} />
+        <DialogContentText id="alert-dialog-slide-description">
           {project.description}
         </DialogContentText>
-        <Divider />
-        <Link href={project.url} underline="none" variant="body2" color="secondary" target="_blank" rel="noopener noreferrer" sx={{mt: 2}}>{project.url}</Link>
+        <Divider sx={{ mb: 2, mt: 2 }} />
+        <Link
+          href={project.url}
+          underline="none"
+          variant="body2"
+          color="secondary"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {project.url}
+        </Link>
       </DialogContent>
       <DialogActions>
         <Button color="secondary" onClick={handleClose}>

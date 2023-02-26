@@ -72,7 +72,15 @@ export default function Portfolio(): JSX.Element {
 
   return (
     <Wrapper title="Portfolio">
-      <Grid container spacing={4}>
+      <Grid
+        container
+        spacing={4}
+        sx={{
+          alignItems: "center",
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
         {projects.map((project) => (
           <Grid item key={project.id} xs={12} sm={6} md={4}>
             <Card
