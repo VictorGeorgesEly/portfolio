@@ -14,7 +14,11 @@ import Wrapper from "../components/Wrapper";
 import Reptile from "../assets/reptile.jpg";
 import PortfolioImg from "../assets/projects/portfolio.png";
 import JuniorIsepImg from "../assets/projects/juniorisep.jpeg";
-import PsyInsight from "../assets/projects/psyinsight.jpeg";
+import PsyInsightImg from "../assets/projects/psyinsight.jpeg";
+import CnjeImg from "../assets/projects/cnje.png";
+import IsepImg from "../assets/projects/isep.svg";
+import IsepLiveImg from "../assets/projects/iseplive.png";
+import SopraBankingSoftwareImg from "../assets/projects/sbs.jpeg";
 
 interface ProjectData {
   id: number;
@@ -49,7 +53,7 @@ const projects: ProjectData[] = [
       "Website réalisé pour mettre en avant les services d'une junior entreprise",
     technologies: ["HTML", "CSS", "JavaScript"],
     url: "https://github.com/VictorGeorgesEly/psyinsight",
-    photo: PsyInsight,
+    photo: PsyInsightImg,
   },
   {
     id: 4,
@@ -58,7 +62,7 @@ const projects: ProjectData[] = [
       "Website réalisé pour le prix de la meilleure approche commerciale",
     technologies: ["HTML", "CSS", "JavaScript"],
     url: "https://github.com/VictorGeorgesEly/pro_alten",
-    photo: Reptile,
+    photo: CnjeImg,
   },
   {
     id: 5,
@@ -67,7 +71,7 @@ const projects: ProjectData[] = [
       "CRM de gestion de projet (réunions, rapports, équipes, documents...)",
     technologies: ["ReactJS", "Spring Boot"],
     url: "https://github.com/VictorGeorgesEly/isep-cameleon",
-    photo: Reptile,
+    photo: IsepImg,
   },
   {
     id: 6,
@@ -76,7 +80,7 @@ const projects: ProjectData[] = [
       "Projet de visualisation de l'évolution des stations Vélib à PARIS",
     technologies: ["Java"],
     url: "https://github.com/VictorGeorgesEly/theisepsvelibproject",
-    photo: Reptile,
+    photo: IsepImg,
   },
   {
     id: 7,
@@ -102,6 +106,51 @@ const projects: ProjectData[] = [
     technologies: ["Bash"],
     url: "https://github.com/VictorGeorgesEly/covid-doctolib",
     photo: Reptile,
+  },
+  {
+    id: 10,
+    name: "ISEP Live",
+    description:
+      "Facebook like réalisé pour l'association ISEP Live",
+    technologies: ["ReactJS", "Spring Boot"],
+    url: "https://github.com/juniorisep/IsepLive",
+    photo: IsepLiveImg,
+  },
+  {
+    id: 11,
+    name: "CorPex",
+    description:
+      "Outil de génération de flux bancaire (CR165, SCT, SDD, SCTRB4)",
+    technologies: ["Java"],
+    url: "",
+    photo: SopraBankingSoftwareImg,
+  },
+  {
+    id: 12,
+    name: "CorPex",
+    description:
+      "Outil d'initialisation des flux de restitution du nouveau logiciel à partir des données de l'ancienne plate-forme bancaire",
+    technologies: ["Java", "Batch", "Oracle Database"],
+    url: "",
+    photo: SopraBankingSoftwareImg,
+  },
+  {
+    id: 13,
+    name: "CorPex",
+    description:
+      "Outil d'import - export de données d'un site A vers un site B",
+    technologies: ["Spring Batch", "Batch", "Oracle Database"],
+    url: "",
+    photo: SopraBankingSoftwareImg,
+  },
+  {
+    id: 14,
+    name: "CorPex",
+    description:
+      "Outil de montée de version",
+    technologies: ["Spring Batch", "Batch", "Oracle Database"],
+    url: "",
+    photo: SopraBankingSoftwareImg,
   },
   // Add more projects here as needed
 ];
@@ -137,12 +186,13 @@ export default function Portfolio(): JSX.Element {
               }}
               elevation={12}
             >
-              <CardActionArea sx={{height: "100%"}} onClick={() => handleDialogOpen(project)}>
+              <CardActionArea onClick={() => handleDialogOpen(project)}>
                 <CardMedia
                   component="img"
                   height="140"
                   image={project.photo}
                   alt={`${project.name} image`}
+                  sx={{backgroundColor: 'white'}} // TODO
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="div">

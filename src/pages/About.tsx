@@ -125,7 +125,7 @@ function Techno(): JSX.Element {
     },
     {
       id: 3,
-      name: "Oracle Databases",
+      name: "Oracle Database",
       photo: OracleSvg,
     },
   ];
