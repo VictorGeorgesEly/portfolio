@@ -11,7 +11,6 @@ import React from "react";
 import DialogBox from "../components/DialogBox";
 import Wrapper from "../components/Wrapper";
 
-import Reptile from "../assets/reptile.jpg";
 import PortfolioImg from "../assets/projects/portfolio.png";
 import JuniorIsepImg from "../assets/projects/juniorisep.jpeg";
 import PsyInsightImg from "../assets/projects/psyinsight.jpeg";
@@ -19,6 +18,7 @@ import CnjeImg from "../assets/projects/cnje.png";
 import IsepImg from "../assets/projects/isep.svg";
 import IsepLiveImg from "../assets/projects/iseplive.png";
 import SopraBankingSoftwareImg from "../assets/projects/sbs.jpeg";
+import GithubImg from "../assets/projects/github.png";
 
 interface ProjectData {
   id: number;
@@ -88,7 +88,7 @@ const projects: ProjectData[] = [
     description: "Logiciel de cryptage et de décryptage (x509 - PKCS12)",
     technologies: ["Java"],
     url: "https://github.com/VictorGeorgesEly/Encrypt-Decrypt",
-    photo: Reptile,
+    photo: GithubImg,
   },
   {
     id: 8,
@@ -96,7 +96,7 @@ const projects: ProjectData[] = [
     description: "Système de configuration rapide pour un nouveau mac",
     technologies: ["Ansible"],
     url: "https://github.com/VictorGeorgesEly/mac-conf",
-    photo: Reptile,
+    photo: GithubImg,
   },
   {
     id: 9,
@@ -105,13 +105,12 @@ const projects: ProjectData[] = [
       "Script permettant de détecter une place de libre pour l'injection d'un vaccin du covid 19",
     technologies: ["Bash"],
     url: "https://github.com/VictorGeorgesEly/covid-doctolib",
-    photo: Reptile,
+    photo: GithubImg,
   },
   {
     id: 10,
     name: "ISEP Live",
-    description:
-      "Facebook like réalisé pour l'association ISEP Live",
+    description: "Facebook like réalisé pour l'association ISEP Live",
     technologies: ["ReactJS", "Spring Boot"],
     url: "https://github.com/juniorisep/IsepLive",
     photo: IsepLiveImg,
@@ -146,8 +145,7 @@ const projects: ProjectData[] = [
   {
     id: 14,
     name: "CorPex",
-    description:
-      "Outil de montée de version",
+    description: "Outil de montée de version",
     technologies: ["Spring Batch", "Batch", "Oracle Database"],
     url: "",
     photo: SopraBankingSoftwareImg,
@@ -192,7 +190,7 @@ export default function Portfolio(): JSX.Element {
                   height="140"
                   image={project.photo}
                   alt={`${project.name} image`}
-                  sx={{backgroundColor: 'white'}} // TODO
+                  sx={{ backgroundColor: "white" }} // TODO
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="div">
