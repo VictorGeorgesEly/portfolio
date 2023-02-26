@@ -217,7 +217,7 @@ function Header(): JSX.Element {
   const contactInfo = [
     { label: "Email", value: "victor.georges.ely@gmail.com" },
     { label: "Téléphone", value: "06 70 76 73 80" },
-    { label: "Addresse", value: "PARIS, FRANCE" },
+    { label: "Addresse", value: "Paris, FRANCE" },
     { label: "Permis", value: "B" },
     { label: "Langues", value: "Français | Anglais" },
   ];

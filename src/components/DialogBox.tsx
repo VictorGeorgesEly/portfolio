@@ -1,4 +1,5 @@
 import {
+  Box,
   Button,
   Dialog,
   DialogActions,
@@ -50,7 +51,21 @@ export default function DialogBox({
     >
       <DialogTitle>{project.name}</DialogTitle>
       <DialogContent>
-        <img src={project.photo} alt="Project" style={{ width: "100%" }} />
+        <Box
+          sx={{
+            maxHeight: "400px",
+            overflow: "hidden",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <img
+            src={project.photo}
+            alt="Project"
+            style={{ width: "100%", height: "auto" }}
+          />
+        </Box>
         <DialogContentText id="alert-dialog-slide-description">
           {project.description}
         </DialogContentText>
