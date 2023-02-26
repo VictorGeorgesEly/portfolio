@@ -13,7 +13,8 @@ import Wrapper from "../components/Wrapper";
 
 import Reptile from "../assets/reptile.jpg";
 import PortfolioImg from "../assets/projects/portfolio.png";
-import CatnixImg from "../assets/projects/catnix.png";
+import JuniorIsepImg from "../assets/projects/juniorisep.jpeg";
+import PsyInsight from "../assets/projects/psyinsight.jpeg";
 
 interface ProjectData {
   id: number;
@@ -39,7 +40,7 @@ const projects: ProjectData[] = [
     description: "CRM réalisé pour l'association Junior ISEP",
     technologies: ["ReactJS", "Spring Boot"],
     url: "",
-    photo: CatnixImg,
+    photo: JuniorIsepImg,
   },
   {
     id: 3,
@@ -48,7 +49,7 @@ const projects: ProjectData[] = [
       "Website réalisé pour mettre en avant les services d'une junior entreprise",
     technologies: ["HTML", "CSS", "JavaScript"],
     url: "https://github.com/VictorGeorgesEly/psyinsight",
-    photo: Reptile,
+    photo: PsyInsight,
   },
   {
     id: 4,
@@ -122,7 +123,6 @@ export default function Portfolio(): JSX.Element {
         container
         spacing={4}
         sx={{
-          alignItems: "center",
           display: "flex",
           justifyContent: "center",
         }}
@@ -137,7 +137,7 @@ export default function Portfolio(): JSX.Element {
               }}
               elevation={12}
             >
-              <CardActionArea onClick={() => handleDialogOpen(project)}>
+              <CardActionArea sx={{height: "100%"}} onClick={() => handleDialogOpen(project)}>
                 <CardMedia
                   component="img"
                   height="140"
