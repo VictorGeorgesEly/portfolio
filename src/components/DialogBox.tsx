@@ -9,6 +9,7 @@ import {
   Divider,
   Link,
   Slide,
+  Typography,
 } from "@mui/material";
 import { TransitionProps } from "@mui/material/transitions";
 import React from "react";
@@ -18,6 +19,7 @@ interface DialogBoxProps {
     id: number;
     name: string;
     description: string;
+    technologies: string[];
     url: string;
     photo: string;
   };
@@ -62,13 +64,16 @@ export default function DialogBox({
         >
           <img
             src={project.photo}
-            alt="Project"
+            alt={`${project.name} image`}
             style={{ width: "100%", height: "auto" }}
           />
         </Box>
-        <DialogContentText id="alert-dialog-slide-description">
+        <DialogContentText id="alert-dialog-slide-description" sx={{ mt: 2 }}>
           {project.description}
         </DialogContentText>
+        <Typography variant="body2" color="text.secondary">
+          Technologies : {project.technologies.join(", ")}
+        </Typography>
         <Divider sx={{ mb: 2, mt: 2 }} />
         <Link
           href={project.url}

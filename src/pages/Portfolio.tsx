@@ -19,6 +19,7 @@ interface ProjectData {
   id: number;
   name: string;
   description: string;
+  technologies: string[];
   url: string;
   photo: string;
 }
@@ -27,49 +28,94 @@ const projects: ProjectData[] = [
   {
     id: 1,
     name: "Portfolio",
-    description: "Projet réalisé en ReactJS - Typescript",
+    description: "Website vitrine",
+    technologies: ["ReactJS - TypeScript"],
     url: "https://github.com/VictorGeorgesEly/portfolio",
     photo: PortfolioImg,
   },
   {
     id: 2,
     name: "Catnix",
-    description:
-      "CRM réalisé pour l'association Junior ISEP en ReactJS - Spring",
+    description: "CRM réalisé pour l'association Junior ISEP",
+    technologies: ["ReactJS", "Spring Boot"],
     url: "",
     photo: CatnixImg,
   },
   {
     id: 3,
-    name: "Project 3",
-    description: "Description of Project 3",
-    url: "https://github.com",
+    name: "PsyInsight",
+    description:
+      "Website réalisé pour mettre en avant les services d'une junior entreprise",
+    technologies: ["HTML", "CSS", "JavaScript"],
+    url: "https://github.com/VictorGeorgesEly/psyinsight",
     photo: Reptile,
   },
   {
     id: 4,
-    name: "Project 4",
-    description: "Description of Project 4",
-    url: "https://github.com",
+    name: "Pro Alten",
+    description:
+      "Website réalisé pour le prix de la meilleure approche commerciale",
+    technologies: ["HTML", "CSS", "JavaScript"],
+    url: "https://github.com/VictorGeorgesEly/pro_alten",
+    photo: Reptile,
+  },
+  {
+    id: 5,
+    name: "ISEP Caméléon",
+    description:
+      "CRM de gestion de projet (réunions, rapports, équipes, documents...)",
+    technologies: ["ReactJS", "Spring Boot"],
+    url: "https://github.com/VictorGeorgesEly/isep-cameleon",
+    photo: Reptile,
+  },
+  {
+    id: 6,
+    name: "Vélib",
+    description:
+      "Projet de visualisation de l'évolution des stations Vélib à PARIS",
+    technologies: ["Java"],
+    url: "https://github.com/VictorGeorgesEly/theisepsvelibproject",
+    photo: Reptile,
+  },
+  {
+    id: 7,
+    name: "Encryption - decryption",
+    description: "Logiciel de cryptage et de décryptage (x509 - PKCS12)",
+    technologies: ["Java"],
+    url: "https://github.com/VictorGeorgesEly/Encrypt-Decrypt",
+    photo: Reptile,
+  },
+  {
+    id: 8,
+    name: "Setup MacBook",
+    description: "Système de configuration rapide pour un nouveau mac",
+    technologies: ["Ansible"],
+    url: "https://github.com/VictorGeorgesEly/mac-conf",
+    photo: Reptile,
+  },
+  {
+    id: 9,
+    name: "Covid Doctolib",
+    description:
+      "Script permettant de détecter une place de libre pour l'injection d'un vaccin du covid 19",
+    technologies: ["Bash"],
+    url: "https://github.com/VictorGeorgesEly/covid-doctolib",
     photo: Reptile,
   },
   // Add more projects here as needed
 ];
 
 export default function Portfolio(): JSX.Element {
-  const [open, setOpen] = React.useState(false);
   const [selectedProject, setSelectedProject] =
     React.useState<ProjectData | null>(null);
 
-  const handleClickOpen = (project: ProjectData) => {
+  const handleDialogOpen = (project: ProjectData) => {
     setSelectedProject(project);
-    setOpen(true);
   };
 
-  const handleClose = () => {
-    setOpen(false);
+  const handleDialogClose = () => {
+    setSelectedProject(null);
   };
-
   return (
     <Wrapper title="Portfolio">
       <Grid
@@ -91,12 +137,12 @@ export default function Portfolio(): JSX.Element {
               }}
               elevation={12}
             >
-              <CardActionArea onClick={() => handleClickOpen(project)}>
+              <CardActionArea onClick={() => handleDialogOpen(project)}>
                 <CardMedia
                   component="img"
                   height="140"
                   image={project.photo}
-                  alt="project"
+                  alt={`${project.name} image`}
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="div">
@@ -105,18 +151,21 @@ export default function Portfolio(): JSX.Element {
                   <Typography variant="body2" color="text.secondary">
                     {project.description}
                   </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    Technologies : {project.technologies.join(", ")}
+                  </Typography>
                 </CardContent>
               </CardActionArea>
-              {selectedProject && (
-                <DialogBox
-                  project={selectedProject}
-                  open={open}
-                  handleClose={handleClose}
-                />
-              )}
             </Card>
           </Grid>
         ))}
+        {selectedProject !== null && (
+          <DialogBox
+            project={selectedProject}
+            open={Boolean(selectedProject)}
+            handleClose={handleDialogClose}
+          />
+        )}
       </Grid>
     </Wrapper>
   );
