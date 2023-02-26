@@ -34,7 +34,8 @@ const projects: ProjectData[] = [
   {
     id: 2,
     name: "Catnix",
-    description: "CRM réalisé pour l'association Junior ISEP en ReactJS - Spring",
+    description:
+      "CRM réalisé pour l'association Junior ISEP en ReactJS - Spring",
     url: "",
     photo: CatnixImg,
   },

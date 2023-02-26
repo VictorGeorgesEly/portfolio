@@ -75,84 +75,83 @@ interface TechnoData {
   photo: string;
 }
 
-const technos: TechnoData[] = [
-  {
-    id: 1,
-    name: "Java",
-    photo: JavaSvg,
-  },
-  {
-    id: 2,
-    name: "Golang",
-    photo: GolangSvg,
-  },
-  {
-    id: 3,
-    name: "JavaScript",
-    photo: JavaScriptSvg,
-  },
-];
-
-const frameworks: TechnoData[] = [
-  {
-    id: 1,
-    name: "Spring",
-    photo: SpringSvg,
-  },
-  {
-    id: 2,
-    name: "ReactJS",
-    photo: ReactSvg,
-  },
-  {
-    id: 3,
-    name: "TypeScript",
-    photo: TypeScriptSvg,
-  },
-];
-
-const databases: TechnoData[] = [
-  {
-    id: 1,
-    name: "MySQL",
-    photo: MysqlSvg,
-  },
-  {
-    id: 2,
-    name: "SQLite",
-    photo: SqliteSvg,
-  },
-  {
-    id: 3,
-    name: "Oracle Databases",
-    photo: OracleSvg,
-  },
-];
-
-const tools: TechnoData[] = [
-  {
-    id: 1,
-    name: "Git",
-    photo: GitSvg,
-  },
-  {
-    id: 2,
-    name: "SVN",
-    photo: SvnSvg,
-  },
-  {
-    id: 3,
-    name: "Jenkins",
-    photo: JenkinsSvg,
-  },
-  {
-    id: 3,
-    name: "Intellij",
-    photo: Intellijvg,
-  },
-];
-
 function Techno(): JSX.Element {
+  const technos: TechnoData[] = [
+    {
+      id: 1,
+      name: "Java",
+      photo: JavaSvg,
+    },
+    {
+      id: 2,
+      name: "Golang",
+      photo: GolangSvg,
+    },
+    {
+      id: 3,
+      name: "JavaScript",
+      photo: JavaScriptSvg,
+    },
+  ];
+
+  const frameworks: TechnoData[] = [
+    {
+      id: 1,
+      name: "Spring",
+      photo: SpringSvg,
+    },
+    {
+      id: 2,
+      name: "ReactJS",
+      photo: ReactSvg,
+    },
+    {
+      id: 3,
+      name: "TypeScript",
+      photo: TypeScriptSvg,
+    },
+  ];
+
+  const databases: TechnoData[] = [
+    {
+      id: 1,
+      name: "MySQL",
+      photo: MysqlSvg,
+    },
+    {
+      id: 2,
+      name: "SQLite",
+      photo: SqliteSvg,
+    },
+    {
+      id: 3,
+      name: "Oracle Databases",
+      photo: OracleSvg,
+    },
+  ];
+
+  const tools: TechnoData[] = [
+    {
+      id: 1,
+      name: "Git",
+      photo: GitSvg,
+    },
+    {
+      id: 2,
+      name: "SVN",
+      photo: SvnSvg,
+    },
+    {
+      id: 3,
+      name: "Jenkins",
+      photo: JenkinsSvg,
+    },
+    {
+      id: 3,
+      name: "Intellij",
+      photo: Intellijvg,
+    },
+  ];
   return (
     <Grid container sx={{ mt: 2, mb: 2 }}>
       <Grid item xs={12}>
@@ -215,14 +214,18 @@ function TechnoGrid({ items, title }: TechnoGridProps) {
 }
 
 function Header(): JSX.Element {
+  const contactInfo = [
+    { label: "Email", value: "victor.georges.ely@gmail.com" },
+    { label: "Téléphone", value: "06 70 76 73 80" },
+    { label: "Addresse", value: "PARIS, FRANCE" },
+    { label: "Permis", value: "B" },
+    { label: "Langues", value: "Français | Anglais" },
+  ];
+
   return (
     <Grid
       container
-      sx={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
+      sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
       spacing={4}
     >
       <Grid
@@ -230,11 +233,7 @@ function Header(): JSX.Element {
         xs={12}
         sm={4}
         md={3}
-        sx={{
-          alignItems: "center",
-          display: "flex",
-          justifyContent: "center",
-        }}
+        sx={{ alignItems: "center", display: "flex", justifyContent: "center" }}
       >
         <Avatar
           alt="Victor ELY"
@@ -249,71 +248,21 @@ function Header(): JSX.Element {
         <Typography variant="h4">Développeur Full Stack</Typography>
       </Grid>
       <Grid item xs={12} sm={12} md={4}>
-        <Grid item xs={12}>
-          <Typography
-            variant="h6"
-            gutterBottom
-            sx={{
-              borderBottom: "#E48F46 2px solid",
-              display: "inline-block",
-            }}
-          >
-            Email
-          </Typography>
-          <span> : victor.georges.ely@gmail.com</span>
-        </Grid>
-        <Grid item xs={12}>
-          <Typography
-            variant="h6"
-            gutterBottom
-            sx={{
-              borderBottom: "#E48F46 2px solid",
-              display: "inline-block",
-            }}
-          >
-            Téléphone
-          </Typography>
-          <span> : 06 70 76 73 80</span>
-        </Grid>
-        <Grid item xs={12}>
-          <Typography
-            variant="h6"
-            gutterBottom
-            sx={{
-              borderBottom: "#E48F46 2px solid",
-              display: "inline-block",
-            }}
-          >
-            Addresse
-          </Typography>
-          <span> : PARIS, FRANCE</span>
-        </Grid>
-        <Grid item xs={12}>
-          <Typography
-            variant="h6"
-            gutterBottom
-            sx={{
-              borderBottom: "#E48F46 2px solid",
-              display: "inline-block",
-            }}
-          >
-            Permis
-          </Typography>
-          <span> : B</span>
-        </Grid>
-        <Grid item xs={12}>
-          <Typography
-            variant="h6"
-            gutterBottom
-            sx={{
-              borderBottom: "#E48F46 2px solid",
-              display: "inline-block",
-            }}
-          >
-            Langues
-          </Typography>
-          <span> : Français | Anglais</span>
-        </Grid>
+        {contactInfo.map(({ label, value }) => (
+          <Grid item xs={12} key={label}>
+            <Typography
+              variant="h6"
+              gutterBottom
+              sx={{
+                borderBottom: "#E48F46 2px solid",
+                display: "inline-block",
+              }}
+            >
+              {label}
+            </Typography>
+            <span> : {value}</span>
+          </Grid>
+        ))}
       </Grid>
     </Grid>
   );
