@@ -19,6 +19,7 @@ import IsepImg from "../assets/projects/isep.svg";
 import IsepLiveImg from "../assets/projects/iseplive.png";
 import SopraBankingSoftwareImg from "../assets/projects/sbs.jpeg";
 import GithubImg from "../assets/projects/github.png";
+import VelibImg from "../assets/projects/velib.png";
 
 interface ProjectData {
   id: number;
@@ -82,7 +83,7 @@ const projects: ProjectData[] = [
       "Il s'agit d'un projet de simulation des évolutions des stations vélibs sur une période de 24h.",
     technologies: ["Java"],
     url: "https://github.com/VictorGeorgesEly/theisepsvelibproject",
-    photo: IsepImg,
+    photo: VelibImg,
   },
   {
     id: 7,
