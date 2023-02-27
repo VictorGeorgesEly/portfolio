@@ -12,7 +12,8 @@ import {
   Typography,
 } from "@mui/material";
 import { TransitionProps } from "@mui/material/transitions";
-import React from "react";
+import React, { useState } from "react";
+import Progress from "./Progress";
 
 interface DialogBoxProps {
   project: {
@@ -41,6 +42,11 @@ export default function DialogBox({
   open,
   handleClose,
 }: DialogBoxProps): JSX.Element {
+  const [isLoading, setIsLoading] = useState(true);
+
+  const handleImageLoaded = () => {
+    setIsLoading(false);
+  };
   return (
     <Dialog
       open={open}
@@ -52,6 +58,7 @@ export default function DialogBox({
       maxWidth="md"
     >
       <DialogTitle>{project.name}</DialogTitle>
+      {isLoading && <Progress />}
       <DialogContent>
         <Box
           sx={{
@@ -60,12 +67,15 @@ export default function DialogBox({
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
+            backgroundColor: "white",
           }}
         >
           <img
             src={project.photo}
             alt={`${project.name} image`}
             style={{ width: "100%", height: "auto" }}
+            onLoad={handleImageLoaded}
+            hidden={isLoading}
           />
         </Box>
         <DialogContentText id="alert-dialog-slide-description" sx={{ mt: 2 }}>
