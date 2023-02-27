@@ -120,7 +120,7 @@ const projects: ProjectData[] = [
   },
   {
     id: 11,
-    name: "CorPex",
+    name: "Générateur de flux bancaires",
     description:
       "Outil de génération de flux bancaire (CR165, SCT, SDD, SCTRB4)",
     technologies: ["Java"],
@@ -129,7 +129,7 @@ const projects: ProjectData[] = [
   },
   {
     id: 12,
-    name: "CorPex",
+    name: "Initialisateur de flux bancaires",
     description:
       "Outil d'initialisation des flux de restitution du nouveau logiciel à partir des données de l'ancienne plate-forme bancaire",
     technologies: ["Java", "Batch", "Oracle Database"],
@@ -138,7 +138,7 @@ const projects: ProjectData[] = [
   },
   {
     id: 13,
-    name: "CorPex",
+    name: "Import - Export",
     description:
       "Outil d'import - export de données d'un site A vers un site B",
     technologies: ["Spring Batch", "Batch", "Oracle Database"],
@@ -147,7 +147,7 @@ const projects: ProjectData[] = [
   },
   {
     id: 14,
-    name: "CorPex",
+    name: "Montée de version",
     description: "Outil de montée de version",
     technologies: ["Spring Batch", "Batch", "Oracle Database"],
     url: "",
