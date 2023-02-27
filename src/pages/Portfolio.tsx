@@ -13,7 +13,7 @@ import Wrapper from "../components/Wrapper";
 
 import PortfolioImg from "../assets/projects/portfolio.png";
 import JuniorIsepImg from "../assets/projects/juniorisep.jpeg";
-import PsyInsightImg from "../assets/projects/psyinsight.jpeg";
+import PsyInsightImg from "../assets/projects/psyinsight.png";
 import CnjeImg from "../assets/projects/cnje.png";
 import IsepImg from "../assets/projects/isep.svg";
 import IsepLiveImg from "../assets/projects/iseplive.png";
