@@ -33,7 +33,8 @@ const projects: ProjectData[] = [
   {
     id: 1,
     name: "Portfolio",
-    description: "Website vitrine",
+    description:
+      "Il s'agit d'un website (celui sur lequel vous vous trouvez) afin de mettre en avant les projets sur lesquels j'ai participé.",
     technologies: ["ReactJS - TypeScript"],
     url: "https://github.com/VictorGeorgesEly/portfolio",
     photo: PortfolioImg,
@@ -41,7 +42,8 @@ const projects: ProjectData[] = [
   {
     id: 2,
     name: "Catnix",
-    description: "CRM réalisé pour l'association Junior ISEP",
+    description:
+      "Il s'agit d'un projet de création de CRM à destination de l'association Junior ISEP. Il a pour objectif de remplacer l'ancien (datant des années 2000) qui ne répondait plus aux processus de l'association. Le projet a demandé l'effort de 5 développeurs afin de réaliser l'ensemble des modules nécessaire à son bon fonctionnement (prospection, publipostage, gestion des utilisateurs, statistiques, gestion des projets...). Le CRM a été conçu sous la forme de micro-services communiquant à l'aide d'une API Gateway afin de minimiser l'impact sur le système en cas de panne.",
     technologies: ["ReactJS", "Spring Boot"],
     url: "",
     photo: JuniorIsepImg,
@@ -50,7 +52,7 @@ const projects: ProjectData[] = [
     id: 3,
     name: "PsyInsight",
     description:
-      "Website réalisé pour mettre en avant les services d'une junior entreprise",
+      "Il s'agit d'un projet de construction de site Internet vitrine à destination d'une association afin de mettre en avant ses activités et booster son référencement.",
     technologies: ["HTML", "CSS", "JavaScript"],
     url: "https://github.com/VictorGeorgesEly/psyinsight",
     photo: PsyInsightImg,
@@ -59,7 +61,7 @@ const projects: ProjectData[] = [
     id: 4,
     name: "Pro Alten",
     description:
-      "Website réalisé pour le prix de la meilleure approche commerciale",
+      "Ce projet a été conçu afin de répondre à un cahier des charges fixé par Alten dans l'objectif de remporter le prix de la meilleure approche commerciale. Il s'agit d'un site Internet conçu sous la forme d'un avant-projet, permettant au client de sélectionner des options facultatives et lui permettant de voir l'évolution du temps de projet et de son prix final.",
     technologies: ["HTML", "CSS", "JavaScript"],
     url: "https://github.com/VictorGeorgesEly/pro_alten",
     photo: CnjeImg,
@@ -68,7 +70,7 @@ const projects: ProjectData[] = [
     id: 5,
     name: "ISEP Caméléon",
     description:
-      "CRM de gestion de projet (réunions, rapports, équipes, documents...)",
+      "Il s'agit d'un projet réalisé en dernière année au sein de mon école d'ingénieurs. En équipe de 6, nous avions pour mission de réaliser un CRM permettant aux étudiants et professeurs d'avoir un lieu où tous les projets seraient réunis et suivi et fur et à mesure de leur avancement. Cet outil possède différents modules (création et gestion de groupes, gestion des utilisateurs, publipostage de documents, upload de documents, gestion des réunions et emploi du temps...)",
     technologies: ["ReactJS", "Spring Boot"],
     url: "https://github.com/VictorGeorgesEly/isep-cameleon",
     photo: IsepImg,
@@ -77,7 +79,7 @@ const projects: ProjectData[] = [
     id: 6,
     name: "Vélib",
     description:
-      "Projet de visualisation de l'évolution des stations Vélib à PARIS",
+      "Il s'agit d'un projet de simulation des évolutions des stations vélibs sur une période de 24h.",
     technologies: ["Java"],
     url: "https://github.com/VictorGeorgesEly/theisepsvelibproject",
     photo: IsepImg,
@@ -196,9 +198,9 @@ export default function Portfolio(): JSX.Element {
                   <Typography gutterBottom variant="h5" component="div">
                     {project.name}
                   </Typography>
-                  <Typography variant="body2" color="text.secondary">
+                  {/*                  <Typography variant="body2" color="text.secondary">
                     {project.description}
-                  </Typography>
+            </Typography>*/}
                   <Typography variant="body2" color="text.secondary">
                     Technologies : {project.technologies.join(", ")}
                   </Typography>
