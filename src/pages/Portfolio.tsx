@@ -1,8 +1,10 @@
 import {
+  Box,
   Card,
   CardActionArea,
   CardContent,
   CardMedia,
+  CircularProgress,
   Grid,
   Typography,
 } from "@mui/material";
@@ -160,6 +162,8 @@ export default function Portfolio(): JSX.Element {
   const [selectedProject, setSelectedProject] =
     React.useState<ProjectData | null>(null);
 
+  const [imageLoaded, setImageLoaded] = React.useState<boolean>(false);
+
   const handleDialogOpen = (project: ProjectData) => {
     setSelectedProject(project);
   };
@@ -167,6 +171,11 @@ export default function Portfolio(): JSX.Element {
   const handleDialogClose = () => {
     setSelectedProject(null);
   };
+
+  const handleImageLoad = () => {
+    setImageLoaded(true);
+  };
+
   return (
     <Wrapper title="Portfolio">
       <Grid
@@ -188,20 +197,32 @@ export default function Portfolio(): JSX.Element {
               elevation={12}
             >
               <CardActionArea onClick={() => handleDialogOpen(project)}>
+                {!imageLoaded && (
+                  <Box
+                    sx={{
+                      alignItems: "center",
+                      display: "flex",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <CircularProgress />
+                  </Box>
+                )}
                 <CardMedia
                   component="img"
                   height="140"
                   image={project.photo}
                   alt={`${project.name} image`}
-                  sx={{ backgroundColor: "white" }} // TODO
+                  sx={{
+                    backgroundColor: "white",
+                    display: imageLoaded ? "block" : "none",
+                  }}
+                  onLoad={handleImageLoad}
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="div">
                     {project.name}
                   </Typography>
-                  {/*                  <Typography variant="body2" color="text.secondary">
-                    {project.description}
-            </Typography>*/}
                   <Typography variant="body2" color="text.secondary">
                     Technologies : {project.technologies.join(", ")}
                   </Typography>

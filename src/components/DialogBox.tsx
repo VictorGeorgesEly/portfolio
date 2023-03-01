@@ -1,6 +1,7 @@
 import {
   Box,
   Button,
+  CircularProgress,
   Dialog,
   DialogActions,
   DialogContent,
@@ -13,7 +14,6 @@ import {
 } from "@mui/material";
 import { TransitionProps } from "@mui/material/transitions";
 import React, { useState } from "react";
-import Progress from "./Progress";
 
 interface DialogBoxProps {
   project: {
@@ -58,7 +58,17 @@ export default function DialogBox({
       maxWidth="md"
     >
       <DialogTitle>{project.name}</DialogTitle>
-      {isLoading && <Progress />}
+      {isLoading && (
+        <Box
+          sx={{
+            alignItems: "center",
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          <CircularProgress />
+        </Box>
+      )}
       <DialogContent>
         <Box
           sx={{
