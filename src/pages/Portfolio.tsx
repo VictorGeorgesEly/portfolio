@@ -22,6 +22,7 @@ import IsepLiveImg from "../assets/projects/iseplive.png";
 import SopraBankingSoftwareImg from "../assets/projects/sbs.jpeg";
 import GithubImg from "../assets/projects/github.png";
 import VelibImg from "../assets/projects/velib.png";
+import BlobImg from "../assets/projects/blob-front.png";
 
 interface ProjectData {
   id: number;
@@ -154,6 +155,14 @@ const projects: ProjectData[] = [
     technologies: ["Spring Batch", "Batch", "Oracle Database"],
     url: "",
     photo: SopraBankingSoftwareImg,
+  },
+  {
+    id: 15,
+    name: "Blob",
+    description: "ERP en construction à destination de ma soeur pour la gestion de ses activités",
+    technologies: ["ReactJS - Typescript", "Golang", "SQLite"],
+    url: "",
+    photo: BlobImg,
   },
   // Add more projects here as needed
 ];
