@@ -159,7 +159,8 @@ const projects: ProjectData[] = [
   {
     id: 15,
     name: "Blob",
-    description: "ERP en construction à destination de ma soeur pour la gestion de ses activités",
+    description:
+      "ERP en construction à destination de ma soeur pour la gestion de ses activités",
     technologies: ["ReactJS - Typescript", "Golang", "SQLite"],
     url: "https://github.com/VictorGeorgesEly/blob-front",
     photo: BlobImg,
