@@ -8,7 +8,7 @@ export default function NotFound(): JSX.Element {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        height: "100vh",
+        height: "80vh",
         color: "white",
       }}
     >

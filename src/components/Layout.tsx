@@ -9,10 +9,6 @@ import Portfolio from "../pages/Portfolio";
 import Footer from "./Footer";
 import Header from "./Header";
 
-interface WrapperProps {
-  children: JSX.Element;
-}
-
 export default function Layout(): JSX.Element {
   return (
     <Box

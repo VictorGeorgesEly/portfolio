@@ -20,9 +20,7 @@ export default function Router(): JSX.Element {
       {isLoading && <Progress />}
       {!isLoading && (
         <BrowserRouter>
-          <Routes>
-            <Route path="*" element={<Layout />} />
-          </Routes>
+          <Layout />
         </BrowserRouter>
       )}
     </>
